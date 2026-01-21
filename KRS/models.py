@@ -1,0 +1,1 @@
+# Model KRS didefinisikan langsung pada controller menggunakan SQLite

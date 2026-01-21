@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant CM as CalonMahasiswa
+    participant S as Sistem PMB
+    participant DB as Database
+
+    CM->>S: Isi & Submit Form PMB
+    S->>S: Validasi Data Form
+
+    alt Data Tidak Lengkap
+        S-->>CM: Tampilkan Pesan Error
+    else Data Valid
+        S->>DB: Simpan Data Pendaftaran
+        DB-->>S: Konfirmasi Penyimpanan
+        S-->>CM: Status Pendaftaran = Terdaftar
+    end

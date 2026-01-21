@@ -1,0 +1,62 @@
+classDiagram
+    class User {
+        +id: int
+        +name: string
+        +email: string
+        +login()
+        +logout()
+    }
+
+    class Mahasiswa {
+        +npm: string
+        +isiKRS()
+        +lihatTranskrip()
+    }
+
+    class Dosen {
+        +nidn: string
+        +inputNilai()
+        +approveKRS()
+    }
+
+    class Admin {
+        +kelolaDataAkademik()
+    }
+
+    class CalonMahasiswa {
+        +daftarPMB()
+    }
+
+    class Course {
+        +kode: string
+        +nama: string
+        +sks: int
+        +cekPrasyarat()
+    }
+
+    class Enrollment {
+        +semester: string
+        +status: string
+        +submit()
+    }
+
+    class Schedule {
+        +hari: string
+        +jam: string
+        +ruangan: string
+    }
+
+    class Grade {
+        +nilai: string
+        +hitungIPK()
+    }
+
+    User <|-- Mahasiswa
+    User <|-- Dosen
+    User <|-- Admin
+    User <|-- CalonMahasiswa
+
+    Mahasiswa "1" o-- "*" Enrollment
+    Course "1" o-- "*" Enrollment
+    Course "1" *-- "1" Schedule
+    Enrollment "1" *-- "1" Grade

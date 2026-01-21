@@ -1,0 +1,5 @@
+CREATE TABLE krs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nim TEXT,
+    kode_mk TEXT
+);

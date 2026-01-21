@@ -1,0 +1,1 @@
+# Model pendaftar didefinisikan langsung pada controller menggunakan SQLite

@@ -1,0 +1,26 @@
+flowchart LR
+    actorMahasiswa([Mahasiswa])
+    actorDosen([Dosen])
+    actorAdmin([Admin Akademik])
+    actorCalon([Calon Mahasiswa])
+
+    subgraph Sistem Akademik
+        UC1((Isi KRS))
+        UC2((Validasi KRS))
+        UC3((Input Nilai))
+        UC4((Generate Transkrip))
+        UC5((Kelola Data Akademik))
+        UC6((Daftar PMB))
+        UC7((Validasi Data PMB))
+    end
+
+    actorMahasiswa --> UC1
+    UC1 --> UC2
+
+    actorDosen --> UC3
+    actorMahasiswa --> UC4
+
+    actorAdmin --> UC5
+
+    actorCalon --> UC6
+    UC6 --> UC7

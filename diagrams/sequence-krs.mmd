@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant M as Mahasiswa
+    participant S as Sistem Akademik
+    participant D as Dosen PA
+    participant DB as Database
+
+    M->>S: Submit KRS
+    S->>DB: Ambil Data KRS & Mata Kuliah
+    DB-->>S: Data KRS
+
+    S->>S: Cek Prasyarat
+    S->>S: Cek SKS Maksimal (<= 24)
+    S->>S: Cek Jadwal Bentrok
+
+    alt Validasi Gagal
+        S-->>M: KRS Ditolak (Pesan Error)
+    else Validasi Lolos
+        S->>DB: Simpan Status KRS (Pending)
+        DB-->>S: Konfirmasi
+        S-->>M: Status KRS = Pending Approval
+        S-->>D: Notifikasi Persetujuan KRS
+    end
