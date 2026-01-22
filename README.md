@@ -1,4 +1,4 @@
-# Sistem Informasi Akademik Terpadu
+# Sistem Informasi Akademik
 
 ## 📌 Deskripsi
 Sistem Informasi Akademik Terpadu adalah aplikasi berbasis web yang dibangun menggunakan **FastAPI** dan **SQLAlchemy** untuk mengelola proses akademik perguruan tinggi secara terintegrasi.  
